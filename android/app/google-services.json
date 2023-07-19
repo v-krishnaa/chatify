@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "741620683694",
+    "project_id": "chatify-121a2",
+    "storage_bucket": "chatify-121a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741620683694:android:0ed77c7262b1f8d2846e3f",
+        "android_client_info": {
+          "package_name": "com.example.chatify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741620683694-jj1fb88bu9d6jir4tb19lqrmlbkfdjet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmU5wylBNyeGcqII5bEiUi7kjgpWA3z8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741620683694-jj1fb88bu9d6jir4tb19lqrmlbkfdjet.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
