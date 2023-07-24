@@ -29,7 +29,7 @@ class RoundedImageNetwork extends StatelessWidget{
 }
 
 class RoundedImageFile extends StatelessWidget {
-  final PlatformFile image;
+  final File image;
   final double size;
   RoundedImageFile({
     required Key key,
@@ -43,13 +43,18 @@ class RoundedImageFile extends StatelessWidget {
       height: size,
       width: size,
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(image.path!),                                       //Image.file(image),                           
+        /*image: DecorationImage(
+          //image: Image.file(image),                                       //Image.file(image),                           
           fit: BoxFit.cover,
-        ),
+        ),*/
         borderRadius: BorderRadius.all(Radius.circular(size)),
         color: Colors.black,
       ),
+      child: Image.file(
+        image,
+        fit: BoxFit.cover,
+        
+        ),
     );
   }
 }

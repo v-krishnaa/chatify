@@ -11,7 +11,7 @@ class MediaService {
 
 
   Future<PlatformFile?> pickImageFromLibrary() async {
-    FilePickerResult? _result = await FilePicker.platform.pickFiles();            //type: FileType.image
+    FilePickerResult? _result = await FilePicker.platform.pickFiles(type: FileType.image);            //type: FileType.image
 
     if (_result != null){
       return _result.files.first;

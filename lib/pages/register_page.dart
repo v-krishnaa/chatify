@@ -92,7 +92,7 @@ class _RegisterPageState extends State<RegisterPage> {
       onTap: () {
         GetIt.instance.get<MediaService>().pickImageFromLibrary().then((_file) {
           setState(() {
-            _profileImage = _file!;
+            _profileImage = _file;
           });
         });
       },
@@ -100,7 +100,7 @@ class _RegisterPageState extends State<RegisterPage> {
         if (_profileImage != null) {
           return RoundedImageFile(
               key: UniqueKey(),
-              image: _profileImage!,
+              image: File(_profileImage!.path!),
               size: _deviceHeight * 0.15);
         }else{
           return RoundedImageNetwork(key: UniqueKey(), imagePath: "https://th.bing.com/th/id/OIP.ig0trBHt189LVEeUTITsfgHaLE?w=189&h=283&c=7&r=0&o=5&pid=1.7", size: _deviceHeight * 0.15,);
@@ -162,9 +162,13 @@ class _RegisterPageState extends State<RegisterPage> {
         onPressed: () async {
           if (_registerFormKey.currentState!.validate() && _profileImage != null){
             // continuing for registration.
+            _registerFormKey.currentState!.save();
             String? _uid = await _auth.registerUserUsingEmailAndPassword(_email!, _password!);
+            print("step1");
             String? _imageURL = await _cloudStorageService.saveUserImageToStorage(_uid!, _profileImage!);
+            print("step1");
             await _db.createUser(_uid, _email!, _name!, _imageURL!);
+            print("step1");
 
             _navigationService.goBack();
           }
